@@ -37,5 +37,17 @@ export class AppComponent {
       .catch(error => console.error(error));
   }
 
+  atualizarCarro(){
+    const carro: ICarro = {
+      id: 6,
+      marca: "Honda",
+      nome: "Civic"
+    }
+
+    this.carroService.atualizar(carro)
+      .then(carros => console.log('Carro atualizado!', carro))
+      .catch(error => console.error(error));
+  }
+
 
 }

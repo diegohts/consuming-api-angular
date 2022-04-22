@@ -22,4 +22,8 @@ export class CarroService {
     return this.httpClient.post<ICarro>(`${API_PATH}carros/`, carro).toPromise();
   }
 
+  atualizar(carro: ICarro){
+    return this.httpClient.put<ICarro>(`${API_PATH}carros/${carro.id}`, carro).toPromise();
+  }
+
 }
