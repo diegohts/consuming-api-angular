@@ -19,4 +19,10 @@ export class AppComponent {
       .catch(error => console.error(error));
   }
 
+  buscarSomenteUm(){
+    this.carroService.buscarPorId(4)
+      .then(carros => console.log(carros))
+      .catch(error => console.error(error));
+  }
+
 }

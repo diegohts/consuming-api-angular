@@ -13,4 +13,8 @@ export class CarroService {
   buscarTodos(){
     return this.httpClient.get<ICarro[]>(`${API_PATH}carros`).toPromise();
   }
+
+  buscarPorId(id: number){
+    return this.httpClient.get<ICarro>(`${API_PATH}carros/${id}`).toPromise();
+  }
 }
