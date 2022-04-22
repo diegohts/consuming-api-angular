@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CarroService } from './carro.service';
+import { ICarro } from './ICarros';
 
 @Component({
   selector: 'app-root',
@@ -24,5 +25,17 @@ export class AppComponent {
       .then(carros => console.log(carros))
       .catch(error => console.error(error));
   }
+
+  adicionarCarro(){
+    const carro: ICarro = {
+      marca: "Volkswagen",
+      nome: "Gol 1.0"
+    }
+
+    this.carroService.adicionar(carro)
+      .then(carros => console.log('Carro adicionado!'))
+      .catch(error => console.error(error));
+  }
+
 
 }

@@ -17,4 +17,9 @@ export class CarroService {
   buscarPorId(id: number){
     return this.httpClient.get<ICarro>(`${API_PATH}carros/${id}`).toPromise();
   }
+
+  adicionar(carro: ICarro){
+    return this.httpClient.post<ICarro>(`${API_PATH}carros/`, carro).toPromise();
+  }
+
 }
