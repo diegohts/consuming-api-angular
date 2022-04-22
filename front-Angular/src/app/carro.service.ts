@@ -14,8 +14,8 @@ export class CarroService {
     return this.httpClient.get<ICarro[]>(`${API_PATH}carros`).toPromise();
   }
 
-  buscarPorId(id: number){
-    return this.httpClient.get<ICarro>(`${API_PATH}carros/${id}`).toPromise();
+  buscarPorId(carroId: number){
+    return this.httpClient.get<ICarro>(`${API_PATH}carros/${carroId}`).toPromise();
   }
 
   adicionar(carro: ICarro){
@@ -24,6 +24,10 @@ export class CarroService {
 
   atualizar(carro: ICarro){
     return this.httpClient.put<ICarro>(`${API_PATH}carros/${carro.id}`, carro).toPromise();
+  }
+
+  excluir(carroId: number){
+    return this.httpClient.delete<void>(`${API_PATH}carros/${carroId}`).toPromise();
   }
 
 }

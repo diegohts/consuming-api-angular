@@ -21,8 +21,8 @@ export class AppComponent {
   }
 
   buscarSomenteUm(){
-    this.carroService.buscarPorId(4)
-      .then(carros => console.log(carros))
+    this.carroService.buscarPorId(7)
+      .then(carro => console.log(carro))
       .catch(error => console.error(error));
   }
 
@@ -33,7 +33,7 @@ export class AppComponent {
     }
 
     this.carroService.adicionar(carro)
-      .then(carros => console.log('Carro adicionado!'))
+      .then(carro => console.log('Carro adicionado!', carro))
       .catch(error => console.error(error));
   }
 
@@ -45,9 +45,14 @@ export class AppComponent {
     }
 
     this.carroService.atualizar(carro)
-      .then(carros => console.log('Carro atualizado!', carro))
+      .then(carro => console.log('Carro atualizado!', carro))
       .catch(error => console.error(error));
   }
 
+  excluirCarro(){
+    this.carroService.excluir(4)
+      .then(res => console.log('Carro removido!', res))
+      .catch(error => console.error(error));
+  }
 
 }
