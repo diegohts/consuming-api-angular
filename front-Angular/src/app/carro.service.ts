@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { API_PATH } from 'src/environments/environment';
+import { ICarro } from './ICarros';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarroService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  buscarTodos(){
+    return this.httpClient.get<ICarro[]>(`${API_PATH}carros`).toPromise();
+  }
 }

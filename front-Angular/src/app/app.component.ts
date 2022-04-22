@@ -13,4 +13,10 @@ export class AppComponent {
 
   }
 
+  buscarTodosCarros(){
+    this.carroService.buscarTodos()
+      .then(carros => console.log(carros))
+      .catch(error => console.error(error));
+  }
+
 }
